@@ -20,6 +20,7 @@ pickerView.rowIndent = 10.0;
 ```
 
 2. Set dataSource, delegate and call <code>- (void)reloadData</code>
+
 ```objective-c
 pickerView.dataSource = self;
 pickerView.delegate = self;
