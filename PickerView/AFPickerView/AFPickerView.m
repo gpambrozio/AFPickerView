@@ -150,6 +150,7 @@
     recycledViews = [[NSMutableSet alloc] init];
     
     rowsCount = [dataSource numberOfRowsInPickerView:self];
+    [contentView setContentOffset:CGPointMake(0.0, 0.0) animated:NO];
     contentView.contentSize = CGSizeMake(contentView.frame.size.width, 39.0 * rowsCount + 4 * 39.0);    
     [self tileViews];
 }
