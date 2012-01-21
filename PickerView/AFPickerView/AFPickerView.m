@@ -136,8 +136,21 @@
 
 - (void)reloadData
 {
+    // empry views
+    currentRow = 0;
+    rowsCount = 0;
+    
+    for (UIView *aView in visibleViews) 
+        [aView removeFromSuperview];
+    
+    for (UIView *aView in recycledViews)
+        [aView removeFromSuperview];
+    
+    visibleViews = [[NSMutableSet alloc] init];
+    recycledViews = [[NSMutableSet alloc] init];
+    
     rowsCount = [dataSource numberOfRowsInPickerView:self];
-    contentView.contentSize = CGSizeMake(contentView.frame.size.width, 39.0 * rowsCount + 4 * 39.0);
+    contentView.contentSize = CGSizeMake(contentView.frame.size.width, 39.0 * rowsCount + 4 * 39.0);    
     [self tileViews];
 }
 
